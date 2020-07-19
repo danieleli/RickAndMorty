@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="SonarQube - Rick and Morty way" ToolsVersion="16.0">
+  <Include Path=".\sonarqube.ruleset" Action="Default" />
+  <Include Path=".\rickmorty.ruleset" Action="Default" />
+</RuleSet>

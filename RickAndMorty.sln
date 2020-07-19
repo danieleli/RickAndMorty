@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RickAndMorty", "RickAndMorty\RickAndMorty.csproj", "{9BDD94F4-73DD-407B-9824-DAB0164CBF72}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RickAndMorty.Tests", "RickAndMorty.Tests\RickAndMorty.Tests.csproj", "{1D9913EA-6602-4DB5-826A-AC086D115986}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{EF2F8E8D-5026-43DF-BA88-030E1C16B87C}"
+ProjectSection(SolutionItems) = preProject
+	rickmorty.ruleset = rickmorty.ruleset
+	sonarqube.ruleset = sonarqube.ruleset
+	rickmorty.qube.ruleset = rickmorty.qube.ruleset
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9BDD94F4-73DD-407B-9824-DAB0164CBF72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BDD94F4-73DD-407B-9824-DAB0164CBF72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BDD94F4-73DD-407B-9824-DAB0164CBF72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BDD94F4-73DD-407B-9824-DAB0164CBF72}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D9913EA-6602-4DB5-826A-AC086D115986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D9913EA-6602-4DB5-826A-AC086D115986}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D9913EA-6602-4DB5-826A-AC086D115986}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D9913EA-6602-4DB5-826A-AC086D115986}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

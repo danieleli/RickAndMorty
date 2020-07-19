@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "name": "Rick Sanchez",
+    "catchphrase": "I'm Pickle Rick!"
+  },
+  {
+    "id": 2,
+    "name": "Morty Smith",
+    "catchphrase": "Nobody exists on purpose. Nobody belongs anywhere. Everybody's gonna die. Come watch TV?"
+  },
+  {
+    "id": 3,
+    "name": "Birdperson",
+    "catchphrase": "In Bird culture, this is considered a dick move."
+  },
+  {
+    "id": 4,
+    "name": "Mister Meeseeks",
+    "catchphrase": "Look at me! I'm Mister Meeseeks!"
+  },
+  {
+    "id": 5,
+    "name": "Squanchy",
+    "catchphrase": "Squanch"
+  }
+]

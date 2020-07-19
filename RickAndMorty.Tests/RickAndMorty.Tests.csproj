@@ -1,0 +1,62 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
+        <IsPackable>false</IsPackable>
+        <ProjectGuid>E206AFA9-0523-4D1B-BC76-FE3BB7AE9C24</ProjectGuid>
+        <LangVersion>8.0</LangVersion>
+        <Configurations>Debug;DEV;PROD;TEST;UAT</Configurations>
+        <Platforms>AnyCPU;x64</Platforms>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="3.1.0" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+        <PackageReference Include="xunit" Version="2.4.1" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="SonarAnalyzer.CSharp" Version="8.1.0.13383">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\RickAndMorty\RickAndMorty.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Include="appsettings.Development.json" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+        <None Include="appsettings.json" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Utils\TestPayload.json" />
+      <EmbeddedResource Include="Utils\TestPayload.json" />
+    </ItemGroup>
+
+    <Target Name="CopyAppSettings" BeforeTargets="BeforeBuild">
+        <ItemGroup>
+            <SourceFiles Include="..\RickAndMorty\appsettings.json" />
+            <SourceFiles Include="..\RickAndMorty\appsettings.Development.json" />
+        </ItemGroup>
+        <Copy SourceFiles="@(SourceFiles)" DestinationFolder="$(MSBuildProjectDirectory)" SkipUnchangedFiles="false" />
+    </Target>
+
+    <PropertyGroup>
+        <CodeAnalysisRuleSet>$(MSBuildProjectDirectory)\..\rickmorty.qube.ruleset</CodeAnalysisRuleSet>
+        <ApplicationIcon />
+        <OutputType>Exe</OutputType>
+        <StartupObject />
+    </PropertyGroup>
+
+</Project>
