@@ -89,7 +89,7 @@ namespace RickAndMorty.Tests.Api
             }
         }
 
-        private async Task<HttpResponseMessage> Send(
+        public async Task<HttpResponseMessage> Send(
             HttpMethod method,
             string path,
             object? model = null)

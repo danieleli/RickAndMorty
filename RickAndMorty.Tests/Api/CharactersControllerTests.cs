@@ -3,6 +3,8 @@ namespace RickAndMorty.Tests.Api
     using System.Net;
     using System.Net.Http;
     using System.Threading.Tasks;
+    using RickAndMorty.Configuration;
+    using RickAndMorty.Utils;
     using Xunit;
 
     public sealed class CharactersControllerTests : ControllerTests
@@ -37,6 +39,21 @@ namespace RickAndMorty.Tests.Api
                 HttpMethod.Get,
                 $"{GetAllPath}/666",
                 HttpStatusCode.NotFound);
+        }
+
+        [Fact]
+        public async Task GetTransientError()
+        {
+            var response = await this.Send(
+                HttpMethod.Get,
+                $"{GetAllPath}/66");
+
+            var responseBody      = await response.Content.ReadAsStringAsync();
+            var exceptionResponse = responseBody.FromJson<ExceptionHandlerExtensions.ExceptionResponse>();
+
+            Assert.NotNull(exceptionResponse);
+            Assert.Equal(HttpStatusCode.InternalServerError.ToInt(), exceptionResponse.StatusCode);
+            Assert.Contains("transient", exceptionResponse.Message);
         }
     }
 }

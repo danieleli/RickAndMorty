@@ -1,9 +1,10 @@
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Hosting;
 
 namespace RickAndMorty
 {
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
+    using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Server.Kestrel.Core;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
@@ -40,6 +41,7 @@ namespace RickAndMorty
 
         public void Configure(IApplicationBuilder application, IWebHostEnvironment environment)
         {
+            application.SetCustomExceptionHandler(environment.IsDevelopment());
             application.UseSwagger(
                 routePrefix: string.Empty,
                 serviceName: "RickAndMorty",
