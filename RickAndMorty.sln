@@ -1,15 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RickAndMorty", "RickAndMorty\RickAndMorty.csproj", "{9BDD94F4-73DD-407B-9824-DAB0164CBF72}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30225.117
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RickAndMorty", "RickAndMorty\RickAndMorty.csproj", "{6323934B-2459-44BD-B377-8C4FA5B7586A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RickAndMorty.Tests", "RickAndMorty.Tests\RickAndMorty.Tests.csproj", "{1D9913EA-6602-4DB5-826A-AC086D115986}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RickAndMorty.Tests", "RickAndMorty.Tests\RickAndMorty.Tests.csproj", "{E206AFA9-0523-4D1B-BC76-FE3BB7AE9C24}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{EF2F8E8D-5026-43DF-BA88-030E1C16B87C}"
-ProjectSection(SolutionItems) = preProject
-	rickmorty.ruleset = rickmorty.ruleset
-	sonarqube.ruleset = sonarqube.ruleset
-	rickmorty.qube.ruleset = rickmorty.qube.ruleset
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		rickmorty.qube.ruleset = rickmorty.qube.ruleset
+		rickmorty.ruleset = rickmorty.ruleset
+		sonarqube.ruleset = sonarqube.ruleset
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,13 +20,19 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9BDD94F4-73DD-407B-9824-DAB0164CBF72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9BDD94F4-73DD-407B-9824-DAB0164CBF72}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9BDD94F4-73DD-407B-9824-DAB0164CBF72}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9BDD94F4-73DD-407B-9824-DAB0164CBF72}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1D9913EA-6602-4DB5-826A-AC086D115986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1D9913EA-6602-4DB5-826A-AC086D115986}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1D9913EA-6602-4DB5-826A-AC086D115986}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1D9913EA-6602-4DB5-826A-AC086D115986}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6323934B-2459-44BD-B377-8C4FA5B7586A}.Debug|Any CPU.ActiveCfg = Development|Any CPU
+		{6323934B-2459-44BD-B377-8C4FA5B7586A}.Debug|Any CPU.Build.0 = Development|Any CPU
+		{6323934B-2459-44BD-B377-8C4FA5B7586A}.Release|Any CPU.ActiveCfg = Production|Any CPU
+		{6323934B-2459-44BD-B377-8C4FA5B7586A}.Release|Any CPU.Build.0 = Production|Any CPU
+		{E206AFA9-0523-4D1B-BC76-FE3BB7AE9C24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E206AFA9-0523-4D1B-BC76-FE3BB7AE9C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E206AFA9-0523-4D1B-BC76-FE3BB7AE9C24}.Release|Any CPU.ActiveCfg = TEST|Any CPU
+		{E206AFA9-0523-4D1B-BC76-FE3BB7AE9C24}.Release|Any CPU.Build.0 = TEST|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1E111D3F-EA1C-409D-A7BA-AF607477C9B3}
 	EndGlobalSection
 EndGlobal

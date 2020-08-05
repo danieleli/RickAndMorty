@@ -1,3 +1,5 @@
+using RickAndMorty.Utils;
+
 namespace RickAndMorty.Controllers
 {
     using System.Collections.Generic;
@@ -27,6 +29,7 @@ namespace RickAndMorty.Controllers
 
         [HttpGet]
         [ProducesResponseType(typeof(GetAllResponse), 200)]
+        [ResponseCache(CacheProfileName = Constants.DEFAULT_API_CACHE)]
         public async Task<IActionResult> Get()
         {
             var all = await this.GetAll.Get();

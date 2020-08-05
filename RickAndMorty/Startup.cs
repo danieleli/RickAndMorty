@@ -1,3 +1,5 @@
+using Microsoft.AspNetCore.Mvc;
+
 namespace RickAndMorty
 {
     using Microsoft.AspNetCore.Builder;
@@ -24,7 +26,16 @@ namespace RickAndMorty
             services.RegisterRickAndMortyService(this.Configuration);
             services.AddApiVersioning();
             services.ConfigureSwagger("v1", "RickAndMorty");
-            services.AddControllers(o => { });
+            services.AddControllers(o =>
+            {
+                o.CacheProfiles.Add(
+                    Constants.DEFAULT_API_CACHE,
+                    new CacheProfile()
+                    {
+                        Duration = 30
+                    });
+            });
+            services.AddResponseCaching(o => { });
         }
 
         public void Configure(IApplicationBuilder application, IWebHostEnvironment environment)
@@ -34,6 +45,7 @@ namespace RickAndMorty
                 serviceName: "RickAndMorty",
                 schemeAndDomain: "http://localhost:8962");
             application.UseRouting();
+            application.UseResponseCaching();                         // application.UseCors must be called before the call to application.UseResponseCaching()
             application.UseEndpoints(c => { c.MapControllers(); });
         }
     }
